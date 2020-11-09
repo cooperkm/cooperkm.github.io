@@ -22,6 +22,17 @@
       progressive: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
       poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'
   };
+  const player = new bitmovin.player.Player(container, playerConfig);
+
+  player.load(source).then(
+
+    player => {
+        console.log('Successfully created Bitmovin Player instance')
+    },
+    reason => {
+        console.log('Error while creating Bitmovin Player instance')
+    }
+  );
   </script>
 </body>
 </html>
