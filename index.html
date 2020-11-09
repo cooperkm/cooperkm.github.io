@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/style2.css">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
-    <title>Hello World</title>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -13,11 +12,33 @@
       <header>
         <h1 class="name">Bitmovin Multi-Codec Player Demo</h1>
       </header>
-      </article>
+      <main>
+      <div class="my-player"></div>
+      <script type="text/javascript">
+        const container = document.getElementById('my-player');
+        const playerConfig = {key: '278aa40a-9800-4e02-8735-b24be4ea5be4'};
+        const source = {
+            title: "Getting Started with the Bitmovin Player",
+            description: "Now you are ready to embed the Bitmovin Player into your own website :)",
+            dash: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+            hls: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+            progressive: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
+            poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'};
 
-    <footer>
-    </footer>
-  </div>
+        const player = new bitmovin.player.Player(container, playerConfig);
+        player.load(source).then(
+
+        player => {
+          console.log('Successfully created Bitmovin Player instance')
+        },
+        reason => {
+          console.log('Error while creating Bitmovin Player instance')
+        }
+      );
+        </script>
+      </main>
+
+    </div>
   </div>
   </body>
 </html>
