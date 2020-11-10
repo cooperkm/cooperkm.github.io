@@ -586,7 +586,6 @@ var multicodec = function() {
         source.dash = '//bitmovin-a.akamaihd.net/webpages/demos/content/multi-codec/hevc/stream.mpd';
     } else if (browser === BROWSER.SAFARI) {
         selectedCodec = CODEC.H265;
-        source.hls = '//bitmovin-a.akamaihd.net/webpages/demos/content/multi-codec/hevc/stream_fmp4.m3u8';
     }
 
     var selectedCodecElements = document.getElementsByClassName('selected-codec');
