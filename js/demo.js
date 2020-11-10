@@ -586,6 +586,8 @@ var multicodec = function() {
         source.dash = '//bitmovin-a.akamaihd.net/webpages/demos/content/multi-codec/hevc/stream.mpd';
     } else if (browser === BROWSER.SAFARI) {
         selectedCodec = CODEC.H265;
+        source.hls = '//bitmovin-a.akamaihd.net/webpages/demos/content/multi-codec/hevc/stream_fmp4.m3u8';
+        document.getElementById('stats-panels-wrapper').style.display = 'none'; //hiding the performance box as we do not get this data from safari
     }
 
     var selectedCodecElements = document.getElementsByClassName('selected-codec');
